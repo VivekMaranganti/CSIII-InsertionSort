@@ -1,3 +1,5 @@
+import Foundation
+
 func sort(unsortedList: [String]) {
     var myUnsortedList = lowerList
     var sortedList = unsortedList
@@ -31,7 +33,7 @@ var lowerList = [String]()
 
 while let input = readLine() {
     inputList.append(input)
-    lowerList.append(input.lowercased())
+    lowerList.append((input.lowercased()).folding(options: .diacriticInsensitive, locale: Locale.current))
 }
 
 sort(unsortedList: inputList)
